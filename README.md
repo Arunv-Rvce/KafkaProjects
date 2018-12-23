@@ -1,0 +1,2 @@
+# KafkaProjects
+Kafka example projects
