@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class Receiver {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Receiver.class);
 
-	@KafkaListener(topics = "exampletopic")
+	@KafkaListener(topics = "${application.kafka.topic}")
 	public void receive(@Payload String message, @Headers MessageHeaders headers) {
 		LOGGER.info("received message='{}'", message);
 		headers.keySet().forEach(key -> LOGGER.info("{}: {}", key, headers.get(key)));
