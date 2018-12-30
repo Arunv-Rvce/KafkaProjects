@@ -13,6 +13,9 @@ import com.kafka.producer.Sender;
 public class SpringKafkaExampleApplication implements CommandLineRunner{
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringKafkaExampleApplication.class);
+	
+	@Autowired
+    private Sender sender;
 
 	public static void main(String[] args) {
 		try {
@@ -21,8 +24,6 @@ public class SpringKafkaExampleApplication implements CommandLineRunner{
 			System.out.println(e.getMessage());
 		}
 	}
-	
-    private Sender sender = new Sender();
 
     @Override
     public void run(String... strings) throws Exception {
